@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="Wallet">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pocket Wallet</title>
+    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="app.css">
+  </head>
+  <body ng-cloak>
+  	<div class="container" ng-controller="CreateCtrl">
+	  <div class="jumbotron">
+	    	<h1>{{heading}}</h1>
+	    	<table class="table"> 
+	    		<caption>{{describtion}}</caption> 
+	    		<thead> 
+	    			<tr> 
+	    				<th>#</th> 
+	    				<th>Value</th> 
+	    				<th>Price</th> 
+	    			</tr> 
+	    		</thead> 
+	    		<tbody> 
+	    			<tr ng-repeat="message in messages"> 
+	    				<td class="number">{{$index + 1}}</td> 
+	    				<td>{{message.from}}</td>  
+	    				<td>{{message.content}} <a class="delete" href="" ng-click="messages.$remove(message)">x</a></td> 
+	    			</tr>
+	    			<tr>
+	    				<td>
+	    					<th scope="row">Total</th> 
+	    					<th scope="row" ng-bind="sumCalc()"></th>
+	    				</td>
+	    			</tr>
+	    		</tbody> 
+	    	</table>
+
+	    	<form class="form-inline" ng-submit="addMessage()">
+  				<div class="form-group">
+    				<label class="sr-only" for="exampleInputValue">Value</label>
+    				<div class="input-group">
+      					<div class="input-group-addon">#</div>
+      					<input type="text" class="form-control" id="exampleInputValue" placeholder="Value" ng-model="message2">
+    				</div>
+  				</div>
+  				<div class="form-group">
+    				<label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+    				<div class="input-group">
+      					<div class="input-group-addon">$</div>
+      					<input type="text" class="form-control" id="exampleInputAmount" placeholder="Amount" ng-model="message1">
+      					<div class="input-group-addon">.00</div>
+    				</div>
+  				</div>
+  				<button type="submit" class="btn btn-primary">Transfer cash</button>
+			</form>
+	  </div>
+	</div>  
+	  <script src="libs.js"></script>
+	  <script src="app.js"></script>
+	</body>
+</html>

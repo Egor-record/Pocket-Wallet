@@ -1,0 +1,45 @@
+.users-table tr{
+  cursor: pointer;
+} 
+
+@font-face {
+    font-family: "My Custom Font";
+    src: url(fonts/gotham-rounded-medium.otf) format("truetype");
+}
+
+body {
+	background-color: #05668D;
+	max-width: 414px;
+	font-family: 'My Custom Font';
+}
+
+header {
+	text-align: center;
+	color: #F0F3BD;
+}
+
+.choose-buttons {
+	    height: 100px;
+    width: 139px;
+    border: 2px solid #70C1B3;
+}
+
+.choose-buttons__mr-top {
+	margin-top: 20px;
+}
+
+main {
+	color: white;
+	text-align: center;
+	visibility: middle;
+
+	a { 
+		color: white;
+	}
+}
+
+.header__back {
+	text-align: left;
+}
+
+
