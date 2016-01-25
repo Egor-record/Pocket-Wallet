@@ -31,16 +31,17 @@ app.controller('CreateCtrl', ["$scope", "chatMessages", function($scope, chatMes
 		    };
 
 
-		    $scope.sumCalc = function () {
-		    	var sum = "";
-		    	angular.forEach($scope.messages, function(message1) {
-						sum += parseFloat($scope.message1, 10);
-				});
+		$scope.totalPrice = function(){
+		    var total = 0;
+		    var c = $scope.message1;
+		    // vas ctn = parseFloat(c);
+		    // console.log(ctn);
 
-				return sum;
-		    }
-
-
+			for( var count =0; count< $scope.messages.length; count++){
+				total +=$scope.message1;
+			}
+			return total;
+		}
   		}
 	]);
 })();
